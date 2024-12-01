@@ -61,12 +61,18 @@
   text-align: center;
 }
 
+.photographyPage {
+  display: flex;
+  flex-wrap: wrap; /* Allows images to wrap onto new rows */
+  gap: 20px;       /* Adds space between images */
+  justify-content: center; /* Centers the images */
+}
+
 .photographyPage img {
   max-width: 90vw;
-  height: auto;
   max-height: 90vh;
+  height: auto;
   object-fit: contain;
-  margin: 0 auto;
   display: block;
 }
 

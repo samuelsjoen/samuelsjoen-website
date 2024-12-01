@@ -1,6 +1,7 @@
 package com.samuelsjoen.backend;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -12,6 +13,7 @@ import java.util.stream.Collectors;
 @Controller
 public class PortfolioController {
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/api/portfolio")
     @ResponseBody
     public List<String> getImageFilenames() {
@@ -21,7 +23,7 @@ public class PortfolioController {
         File[] files = folder.listFiles((dir, name) -> name.endsWith(".jpg") || name.endsWith(".png"));
 
         return Arrays.stream(files)
-                .map(File::getName)
+                .map(file -> "/images/portfolio/" + file.getName())
                 .collect(Collectors.toList());
     }
 }

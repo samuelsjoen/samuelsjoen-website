@@ -7,20 +7,18 @@ function PhotographyPage() {
         fetch("http://localhost:8080/api/portfolio")
             .then(response => response.json())
             .then(data => {
+                console.log("Fetched images:", data);
                 setImages(data);
             })
             .catch(e => console.log("Error fetching images: ", e));
     }, []);
 
 
-
-
-
     return <div className='photographyPage'>
         {images.map((image, index) => (
             <Image
                 key={index}
-                url={`http://localhost:8080/images/portfolio/${image}`}
+                url={`http://localhost:8080/${image}`}
             />
         ))}
     </div>;
@@ -29,7 +27,7 @@ function PhotographyPage() {
 
 function Image({url}) {
     return <div className='image'>
-        <img src={url} alt={title} />
+        <img src={url} alt="Image" />
     </div>;
 }
 

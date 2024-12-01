@@ -12,10 +12,10 @@ function AboutPage() {
           Additionally, I have a strong interest in filmmaking, having made several short films as well as a feature length film.
           These films are experimental in nature, often exploring themes of identity and memory with a focus on the structural elements of film.
 
-          I'm currently based in Bergen, Norway, where I'm studying informatics at the University of Bergen.
+          I'm currently based in Bergen, Norway, where I'm set to graduate with a bachelor in informatics from the University of Bergen in December 2024.
           I'm always looking for new opportunities to learn and grow, so feel free to reach out to me!
         </h2>
-        <img src="https://scontent.fosl5-1.fna.fbcdn.net/v/t39.30808-6/444929129_3682886501983408_5167666458370690089_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=3HuFQqj1R_wQ7kNvgGyXnyF&_nc_ht=scontent.fosl5-1.fna&_nc_gid=AfUA9ir_hcgepGQseoxRomu&oh=00_AYBwFl04fhaxmYChMp8wQSRnPUhXeBiwQvpgi0dV4-dbQg&oe=6704446A"></img>
+        <img src="http://localhost:8080/images/aboutPage/portrait.jpeg"></img>
       </div>
     </div>
   );
