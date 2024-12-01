@@ -15,7 +15,7 @@ function AboutPage() {
           I'm currently based in Bergen, Norway, where I'm set to graduate with a bachelor in informatics from the University of Bergen in December 2024.
           I'm always looking for new opportunities to learn and grow, so feel free to reach out to me!
         </h2>
-        <img src="http://localhost:8080/images/aboutPage/portrait.jpeg"></img>
+        <img src="http://localhost:8080/images/aboutPage/portrait.jpg" alt="Image"/>
       </div>
     </div>
   );

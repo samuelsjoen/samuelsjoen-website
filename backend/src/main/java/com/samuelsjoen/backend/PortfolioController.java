@@ -1,5 +1,7 @@
 package com.samuelsjoen.backend;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,17 +15,44 @@ import java.util.stream.Collectors;
 @Controller
 public class PortfolioController {
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    private static final Logger logger = LoggerFactory.getLogger(PortfolioController.class);
+
+    @CrossOrigin(origins = "*")
     @GetMapping("/api/portfolio")
     @ResponseBody
     public List<String> getImageFilenames() {
-        String imagesFolderPath = "src/main/resources/static/images/portfolio";
+        logger.info("Portfolio api accessed");
+        String imagesFolderPath = "/app/src/main/resources/static/images/portfolio";
+        logger.debug("Looking for images in folder: {}", imagesFolderPath);
+
         File folder = new File(imagesFolderPath);
+
+        if (!folder.exists()) {
+            logger.error("Directory does not exist: {}", imagesFolderPath);
+            return List.of();
+        }
+
+        if (!folder.isDirectory()) {
+            logger.error("Path is not a directory: {}", imagesFolderPath);
+            return List.of();
+        }
 
         File[] files = folder.listFiles((dir, name) -> name.endsWith(".jpg") || name.endsWith(".png"));
 
-        return Arrays.stream(files)
-                .map(file -> "/images/portfolio/" + file.getName())
+        if (files == null || files.length == 0) {
+            logger.warn("No image files found in folder: {}", imagesFolderPath);
+        } else {
+            logger.info("Found {} image files.", files.length);
+        }
+
+        List<String> imagePaths = Arrays.stream(files)
+                .map(file -> { 
+                    String path ="/images/portfolio/" + file.getName();
+                    logger.debug("Image found: {}", path);
+                    return path;
+                })
                 .collect(Collectors.toList());
+        logger.info("Returning {} image paths.", imagePaths.size());
+        return imagePaths;
     }
 }

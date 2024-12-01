@@ -18,7 +18,7 @@ function PhotographyPage() {
         {images.map((image, index) => (
             <Image
                 key={index}
-                url={`http://localhost:8080/${image}`}
+                url={`http://localhost:8080${image}`}
             />
         ))}
     </div>;
