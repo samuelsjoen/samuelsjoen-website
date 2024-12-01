@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&display=swap'); /* Import Garamond from Google Fonts */
+
+.website {
+  font-family: 'EB Garamond', Garamond, serif;
+}
+
+.navBar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  background-color: #ffffff;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.navBar.hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+.navBar.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.banner {
+  color : #333;
+  font-size: clamp(20px, 5vw, 24px);
+  padding: clamp(15px, 1.5vw, 20px);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-transform: uppercase;
+  font-style: italic;
+  text-align: center;
+}
+
+.menuButton { 
+  color: #333;
+  font-size: clamp(20px, 4.5vw, 25px);
+  padding: clamp(10px, 0.8vw, 15px);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-left: 1px solid #ccc;
+  text-align: center;
+}
+
+.banner:hover,
+.menuButton:hover {
+  color: #ddd;
+}
+
+.content {
+  margin-top: clamp(110px, 7vw, 120px);
+  margin-bottom: 40px;
+  padding: 1vw;
+  text-align: center;
+}
+
+.photographyPage img {
+  max-width: 90vw;
+  height: auto;
+  max-height: 90vh;
+  object-fit: contain;
+  margin: 0 auto;
+  display: block;
+}
+
+.aboutPageContent img {
+  max-width: 90vw;
+  width: 400px;
+  height: auto;
+  border: none;
+}
+
+@media (min-width: 1000px) {
+  .aboutPageContent {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-inline: clamp(5%, 17%);
+    margin-inline: 10%;
+    
+  }
+
+  .aboutPageContent img {
+    margin-top: 0;
+    margin-left: 20px;
+  }
+}
+
+.contactPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+  max-width: 90vw;
+  margin: 0 auto;
+  padding: 15px;
+  text-align: center;
+}
+.contactPage label {
+  display: block;
+  margin-top: 10px;
+  font-size: clamp(10px, 10vw, 20px);
+}
+
+.contactPage input {
+  margin-top: 5px;
+  max-width: 90vw;
+  width: 400px;
+  height: 30px;
+  border: 1px solid #ccc;
+}
+
+.contactPage button {
+  margin-top: 10px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  max-width: 90vw;
+  width: 400px;
+  height: 30px;
+  background-color: rgb(87, 83, 83);
+  color: #fff;
+  font-family: 'EB Garamond', Garamond, serif;
+  font-weight: normal;
+  font-size: clamp(5px, 5vw, 20px);
+}
+
+.contactPage textarea {
+  margin-top: 10px;
+  height: 150px;
+  width: 400px;
+  max-width: 90vw;
+  border: 1px solid #ccc;
+}
+
+.footer {
+  color: #333;
+  background-color: #ffffff;
+  font-size: clamp(12px, 1vw, 15px);
+  padding: 10px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  border-top: 1px solid #ccc;
+  z-index: 1000;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.footer.hidden {
+  transform: translateY(100%);
+  opacity: 0;
+}
+
+.footer.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
