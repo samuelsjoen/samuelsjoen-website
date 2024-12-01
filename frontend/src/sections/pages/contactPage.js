@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import emailjs from 'emailjs-com';
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -6,6 +7,7 @@ const ContactPage = () => {
     email: '',
     message: ''
   });
+  const [statusMessage, setStatusMessage] = useState('');
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -15,8 +17,22 @@ const ContactPage = () => {
     });
   };
 
-  const handleSubmit = {
-    
+  const handleSubmit = (event) => {
+    setStatusMessage('');
+    event.preventDefault();
+    emailjs
+      .sendForm('service_ltc0nl6', 'template_zjdbhfb', event.target, 'jyNHSUNTCLNj3cU7K')
+      .then(
+        (result) => {
+          console.log('SUCCESS!', result.text);
+          setStatusMessage('Your message has been sent successfully!');
+          setFormData({ name: '', email: '', message: '' });
+        },
+        (error) => {
+          console.log('FAILED...', error);
+          setStatusMessage('Failed to send message. Please try again.');
+        }
+      );
   };
 
   return (
@@ -42,6 +58,8 @@ const ContactPage = () => {
 
         <button type="submit">Submit</button>
       </form>
+
+      {statusMessage && <p>{statusMessage}</p>}
     </div>
   );
 }
