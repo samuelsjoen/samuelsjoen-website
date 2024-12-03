@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react';
 
 function PhotographyPage() {
     const [images, setImages] = useState([]);
+    const [visibleCount, setVisibleCount] = useState(10);
 
     useEffect(() => {
-        fetch("http://localhost:8080/api/portfolio")
+        fetch("/api/portfolio")
             .then(response => response.json())
             .then(data => {
                 console.log("Fetched images:", data);
@@ -13,12 +14,25 @@ function PhotographyPage() {
             .catch(e => console.log("Error fetching images: ", e));
     }, []);
 
+    useEffect(() => {
+        const handleScroll = () => {
+            if (
+                window.innerHeight + document.documentElement.scrollTop >=
+                document.documentElement.offsetHeight - 100
+            ) {
+                setVisibleCount((prevCount) => prevCount + 10);
+            }
+        }
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    })
+
 
     return <div className='photographyPage'>
-        {images.map((image, index) => (
+        {images.slice(0, visibleCount).map((image, index) => (
             <Image
                 key={index}
-                url={`http://localhost:8080${image}`}
+                url={`${image}`}
             />
         ))}
     </div>;

@@ -46,6 +46,7 @@ public class PortfolioController {
         }
 
         List<String> imagePaths = Arrays.stream(files)
+                .sorted((file1, file2) -> file1.getName().compareTo(file2.getName()))
                 .map(file -> { 
                     String path ="/images/portfolio/" + file.getName();
                     logger.debug("Image found: {}", path);
