@@ -7,7 +7,9 @@ const useScrollVisibility = () => {
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > lastScrollY) {
-        setIsVisible(false);
+        if (window.scrollY > 30) {
+          setIsVisible(false);
+        }
       } else {
         setIsVisible(true);
       }
