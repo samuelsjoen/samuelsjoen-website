@@ -76,6 +76,77 @@
   display: block;
 }
 
+.filmographyPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.film {
+  display: flex; /* Use flexbox to align content */
+  flex-direction: row; /* Align text and image in a row */
+  gap: 20px; /* Add space between text and image */
+  justify-content: left;
+  align-items: flex-start;
+  padding: 20px;
+  max-width: clamp(400px, 70vw, 70vw);
+  border: none;
+  border-bottom: 1px solid rgb(87, 83, 83);
+  position: relative;
+}
+
+.film h1 {
+  text-transform: uppercase;
+}
+
+.filmText {
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* Let text take remaining space */
+}
+
+.film img {
+  max-width: clamp(300px, 15vw, 15vw); /* Control image size */
+  height: auto;
+  object-fit: contain;
+}
+
+@media screen and (max-width: 1000px) {
+  .film {
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center align the content */
+  }
+
+  .film img {
+    max-width: 80%; /* Adjust image size for smaller screens */
+  }
+}
+
+
+.filmNavButtons {
+  display: flex; /* Align buttons */
+  flex-direction: row;
+  justify-content: center; /* Center buttons horizontally */
+  gap: 15px; /* Add space between buttons */
+  margin-top: 15px;
+}
+
+.filmNavButtons a {
+  display: inline-block;
+  width: clamp(100px, 10vw, 400px);
+  padding: 10px;
+  text-align: center; 
+  background-color: rgb(87, 83, 83);
+  color: #ffffff; /* Set link color */
+  text-decoration: none;
+}
+
+.filmNavButtons a:hover {
+  text-decoration: underline;
+}
+
+
 .aboutPageContent img {
   max-width: 90vw;
   width: 400px;
