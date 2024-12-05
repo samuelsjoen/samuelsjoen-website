@@ -32,7 +32,7 @@ function PhotographyPage() {
         {images.slice(0, visibleCount).map((image, index) => (
             <Image
                 key={index}
-                url={`${image}`}
+                url={image}
             />
         ))}
     </div>;

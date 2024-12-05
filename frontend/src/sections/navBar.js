@@ -6,8 +6,9 @@ function NavBar({ title }) {
 
     return (
         <div className={`navBar ${isVisible ? 'visible' : 'hidden'}`}>
-            <Banner title={title} link="/photography" />
-            <NavigationButton title="About me" link="/about" />
+            <Banner title={title} link="/about" />
+            <NavigationButton title="Photos" link="/photography" />
+            <NavigationButton title="Films" link="/filmography" />
             <NavigationButton title="Contact" link="/contact" />
         </div>
     );

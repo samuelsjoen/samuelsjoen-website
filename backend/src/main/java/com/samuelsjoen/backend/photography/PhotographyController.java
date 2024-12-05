@@ -1,4 +1,4 @@
-package com.samuelsjoen.backend;
+package com.samuelsjoen.backend.photography;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,9 +13,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Controller
-public class PortfolioController {
+public class PhotographyController {
 
-    private static final Logger logger = LoggerFactory.getLogger(PortfolioController.class);
+    private static final Logger logger = LoggerFactory.getLogger(PhotographyController.class);
 
     @CrossOrigin(origins = "*")
     @GetMapping("/api/portfolio")

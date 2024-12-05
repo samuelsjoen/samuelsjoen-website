@@ -26,6 +26,7 @@ services:
       - default
     volumes:
       - ./static:/app/src/main/resources/static
+      - ./backend/samuelsjoen.db:/app/samuelsjoen.db
 
 networks:
   web:
