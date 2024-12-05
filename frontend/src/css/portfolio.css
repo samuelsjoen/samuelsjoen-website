@@ -55,10 +55,28 @@
 }
 
 .content {
-  margin-top: clamp(110px, 7vw, 120px);
+  margin-top: clamp(110px, 15vh, 120px);
   margin-bottom: 40px;
   padding: 1vw;
   text-align: center;
+}
+
+@media screen and (max-width: 1000px) and (max-height: 1000px) {
+  .content {
+    margin-top: 16.5vh;
+  }
+}
+
+@media screen and (max-width: 1000px) and (max-height: 900px) {
+  .content {
+    margin-top: 18.5vh;
+  }
+}
+
+@media screen and (max-width: 1000px) and (max-height: 750px) {
+  .content {
+    margin-top: 22.5vh;
+  }
 }
 
 .photographyPage {
@@ -165,7 +183,7 @@
   }
 
   .aboutPageContent img {
-    margin-top: 0;
+    margin-top: 10px;
     margin-left: 20px;
   }
 }
