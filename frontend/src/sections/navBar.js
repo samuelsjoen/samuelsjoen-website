@@ -8,17 +8,6 @@ import {
 import useScrollVisibility from "../functionality/useScrollVisibility";
 
 function NavBar({ title }) {
-<<<<<<< Updated upstream
-    const isVisible = useScrollVisibility();
-
-    return (
-        <div className={`navBar ${isVisible ? 'visible' : 'hidden'}`}>
-            <Banner title={title} link="/photography" />
-            <NavigationButton title="About me" link="/about" />
-            <NavigationButton title="Contact" link="/contact" />
-        </div>
-    );
-=======
   const isVisible = useScrollVisibility();
 
   return (
@@ -29,7 +18,6 @@ function NavBar({ title }) {
       <NavigationButton title="Contact" link="/contact" />
     </div>
   );
->>>>>>> Stashed changes
 }
 
 /// A simple banner component. Mainly used for the main website banner.
